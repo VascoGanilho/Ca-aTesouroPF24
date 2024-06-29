@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Código</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificador de Código</h1>
+    <label for="codeInput">Insira o código:</label>
+    <input type="text" id="codeInput" placeholder="Digite o código aqui">
+    <button onclick="checkCode()">Verificar</button>
+    <div id="message"></div>
+
+    <script>
+        function checkCode() {
+            var code = document.getElementById('codeInput').value;
+            var messageElement = document.getElementById('message');
+            var message = '';
+
+            switch(code) {
+                case '1234':
+                    message = 'Código correto! Bem-vindo!';
+                    break;
+                case 'abcd':
+                    message = 'Código aceito! Acesso concedido!';
+                    break;
+                default:
+                    message = 'Código inválido. Tente novamente.';
+            }
+
+            messageElement.textContent = message;
+        }
+    </script>
+</body>
+</html>
